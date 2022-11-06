@@ -1,9 +1,12 @@
 import React from 'react'
+import { Layout } from '../../components/Layout'
 
 export function Home() {
   return (
-    <div>
-      <h1>Hello Word</h1>
-    </div>
+    <Layout isToggle={true}>
+      <main>
+        <h1>olha a main</h1>
+      </main>
+    </Layout>
   )
 }
