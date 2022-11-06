@@ -14,13 +14,14 @@ const Route: React.FC<RouteProps> = ({
   isPrivate = false,
   ...rest
 }: RouteProps) => {
-  const { userLogged } = useContext(AuthContext)  
-  console.log(userLogged, 'eoijfeoifje', isPrivate);
+  // const { userLogged } = useContext(AuthContext)  
+  // console.log(userLogged, 'eoijfeoifje', isPrivate);
+  const userLogged = true
   
 
   if (isPrivate && !userLogged) return <Redirect to="/login" />;
 
-  // if (!isPrivate && isUser) return <Redirect to="/home" />;
+  if (!isPrivate && userLogged) return <Redirect to="/home" />;
 
   return <RouteReact {...rest} />;
 };
