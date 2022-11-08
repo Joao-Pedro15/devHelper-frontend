@@ -13,6 +13,8 @@ export const Container = styled.header`
     border: none;
     background-color: transparent;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin-left: 5px;
+    font-weight: bold;
   }
 `
