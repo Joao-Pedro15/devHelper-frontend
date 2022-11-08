@@ -3,7 +3,7 @@ import { Layout } from '../../components/Layout'
 
 export function Home() {
   return (
-    <Layout isToggle={true}>
+    <Layout>
       <main>
         <h1>olha a main</h1>
       </main>
