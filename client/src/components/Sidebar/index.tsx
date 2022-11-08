@@ -3,6 +3,7 @@ import * as S from './style'
 import {TbResize } from "react-icons/tb";
 import { SiMicrosoftexcel } from "react-icons/si";
 import { VscJson, VscFilePdf } from "react-icons/vsc";
+import { AiOutlineFileJpg, AiFillFileWord } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 type Items = {
@@ -17,7 +18,9 @@ export function Sidebar() {
       { name: 'Excel', icon: <SiMicrosoftexcel/>, link: '/' },
       { name: 'Json', icon: <VscJson/>, link: '/' },
       { name: 'PDF', icon: <VscFilePdf/>, link: '/' },
-  ]
+      { name: 'Word', icon: <AiFillFileWord/>, link: '/' },
+      { name: 'JPG', icon: <AiOutlineFileJpg/>, link: '/' },
+    ]
   return (
     <S.Container>
       <ul>
