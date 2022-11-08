@@ -32,12 +32,13 @@ export const Container = styled.aside`
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     padding: 4px;
   }
 
-  li span:last-of-type{
+  li span:first-of-type{
     font-size: 1.5rem;
     margin-top: 5px;
+    margin-left: 10px;
   }
 `
