@@ -30,5 +30,6 @@ export const Container = styled.div<IProps>`
 
   main {
     grid-area: a3;
+    padding: 30px 20px;
   }
 `

@@ -27,8 +27,8 @@ export function Sidebar() {
         { items.map((item) => (
           <Link to={item.link}>
             <li>
-              <span>{item.name}</span>
               <span>{item.icon}</span>
+              <span>{item.name}</span>
             </li>
           </Link>
         )) }

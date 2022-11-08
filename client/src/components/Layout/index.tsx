@@ -1,17 +1,17 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { Header } from '../Header'
 import { Sidebar } from '../Sidebar'
 import * as S from './style'
 
 type IProps = {
   children: ReactNode
-  isToggle: boolean
 }
 
-export function Layout({ children, isToggle } : IProps) {
+export function Layout({ children } : IProps) {
+  const [toggle, setToggle] = useState<boolean>(true)
   return (
-    <S.Container isToggle={isToggle}>
-      <Header />
+    <S.Container isToggle={toggle}>
+      <Header setToggle={setToggle} toggle={toggle} />
       <Sidebar />
       { children }
     </S.Container>
