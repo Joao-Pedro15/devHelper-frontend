@@ -20,15 +20,15 @@ export const Container = styled.div<IProps>`
   grid-template-areas: ${({isToggle}) => isToggle === true ? toggle : notToggle};
 
 
-  header {
+  header:first-of-type {
     grid-area: a1;
   }
 
-  aside {
+  aside:first-of-type {
     grid-area: a2;
   }
 
-  main {
+  main:first-of-type {
     grid-area: a3;
     padding: 30px 20px;
   }
