@@ -1,5 +1,6 @@
 import React from 'react'
 import * as S from './style'
+import { VscJson, VscFilePdf } from "react-icons/vsc";
 
 type IProps = {
   image?: string | any;
@@ -11,12 +12,13 @@ type IProps = {
 function Card({ actions, image, title, color } : IProps) {
   return (
     <S.Container>
-      <header>
-        <div></div>
-        <img src={image} alt="icone do serviço" />
-      </header>
-      <main>
+      <S.Header>
+      <div></div>
+      <VscFilePdf />
+      </S.Header>
+      <S.Main>
         <h4>{title}</h4>
+        <div></div>
         { typeof actions === 'string' ? (
           <p>{actions}</p>
         ) : (
@@ -28,7 +30,7 @@ function Card({ actions, image, title, color } : IProps) {
             })}
           </>
         ) }
-      </main>
+      </S.Main>
     </S.Container>
   )
 }
