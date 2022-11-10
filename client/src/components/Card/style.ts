@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 35%;
+  width: 25rem;
+  height: 13rem;
   border-radius: 12px;
   overflow: hidden;
   background-color: #fefefe;
@@ -29,12 +30,22 @@ export const Main = styled.main`
     color: #333;
     font-size: 2rem;
   }
-
-  p{
-    color: #555;
-    font-size: 1rem;
+  svg {
+    font-size: 3rem;
+    padding: 5px 0 0 20px;
   }
   div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  p{
+    color: #bbb;
+    font-size: .9rem;
+  }
+  div:last-of-type {
     padding: 1px;
     background-color: #eee;
   }
