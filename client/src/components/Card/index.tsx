@@ -14,10 +14,12 @@ function Card({ actions, image, title, color } : IProps) {
     <S.Container>
       <S.Header>
       <div></div>
-      <VscFilePdf />
       </S.Header>
       <S.Main>
+      <div>
+        <VscFilePdf />
         <h4>{title}</h4>
+      </div>
         <div></div>
         { typeof actions === 'string' ? (
           <p>{actions}</p>
