@@ -1,24 +1,17 @@
 import express, { Request, Response } from 'express'
-import { images } from './routes'
+import routes from './routes/router'
 
 import cors from 'cors'
 import path from 'path'
+
 
 const app = express()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors())
 
-app.use('/images', images.default)
 
-
-app.get('/api', async(request: Request, response: Response) => {
-    try {
-        return response.status(200).json({message: 'Hello Word!'})
-    } catch (error) {
-        return response.status(500).json(error)
-    }
-})
+app.use('/api', routes)
 
 app.use(express.static(path.join(__dirname, '../client/build')))
 
