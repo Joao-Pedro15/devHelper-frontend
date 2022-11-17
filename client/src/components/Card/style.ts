@@ -5,11 +5,19 @@ export const Container = styled.div`
   height: 13rem;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #fefefe;
+  background-color:#eeee;
   box-shadow: 1px 2px 10px #ccc;
+  transition: .5s ease-in-out;
+  :hover{
+    header{
+      transform: scale(40);
+      opacity: 50%;
+    }
+  }
 `
 
 export const Header = styled.header`
+  transition: .5s ease-in-out;
   div:first-of-type {
     width: 100%;
     padding: 10px;
