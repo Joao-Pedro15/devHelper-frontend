@@ -8,7 +8,7 @@ export const Container = styled.aside`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  max-width: 80%;
+  min-width: 100%;
 
   ul{
     width:100%;
