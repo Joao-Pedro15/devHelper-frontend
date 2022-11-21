@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.aside`
   border-top: 1px solid #222;
-  box-shadow: 2px 4px 4px #333;
   background: #333;
   height: 100vh;
   display: flex;
