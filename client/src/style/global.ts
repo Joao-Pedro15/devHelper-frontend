@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     width: 100vw;
     height: 100vh;
-    background-color: #fdfd;
+    /* background-color: #fdfd; */
   }
 
   #root {
