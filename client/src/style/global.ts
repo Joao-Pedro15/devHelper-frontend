@@ -7,16 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
+  :root {
+    --primary: cyan;
+    --secondary: "#ccc";
+  }
+
   html, body {
     width: 100vw;
     height: 100vh;
-    /* background-color: #fdfd; */
-  }
-
-  #root {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
   }
 
   img {
