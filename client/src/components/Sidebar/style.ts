@@ -1,14 +1,21 @@
 import styled from 'styled-components'
 
-export const Container = styled.aside`
+type IToggle = {
+  isToggle: boolean
+}
+
+export const Container = styled.aside<IToggle>`
   border-top: 1px solid #222;
   background: #333;
-  height: 100vh;
+  position: fixed;
+  top: 2.4rem;
+  height: calc(100vh - 2rem);
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  min-width: 100%;
-
+  width: ${({ isToggle }) => isToggle ? '300px' : '60px'};
+  overflow: hidden;
+  transition: .3s ease-in all;
   ul{
     width:100%;
     display: flex;

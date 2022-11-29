@@ -12,7 +12,11 @@ type Items = {
   icon: any
 }
 
-export function Sidebar() {
+type ISidebar = {
+  isToggle: boolean
+}
+
+export function Sidebar({ isToggle }:ISidebar) {
     const items : Items[] = [
       { name: 'Redimencionar', icon: <TbResize/>, link: '/' },
       { name: 'Excel', icon: <SiMicrosoftexcel/>, link: '/' },
@@ -22,7 +26,7 @@ export function Sidebar() {
       { name: 'JPG', icon: <AiOutlineFileJpg/>, link: '/' },
     ]
   return (
-    <S.Container>
+    <S.Container isToggle={isToggle}>
       <ul>
         { items.map((item) => (
           <Link to={item.link}>
