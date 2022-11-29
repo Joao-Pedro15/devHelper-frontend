@@ -12,7 +12,7 @@ export function Layout({ children } : IProps) {
   return (
     <S.Container isToggle={toggle}>
       <Header setToggle={setToggle} toggle={toggle} />
-      <Sidebar />
+      <Sidebar isToggle={toggle} />
       { children }
     </S.Container>
   )
