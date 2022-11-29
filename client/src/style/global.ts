@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --primary: cyan;
+    --primary: #333;
     --secondary: "#ccc";
   }
 
