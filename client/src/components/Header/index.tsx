@@ -11,6 +11,7 @@ export function Header({ setToggle, toggle } : IProps) {
   return (
     <S.Container>
       <div>
+      <div>
         <button
         onClick={() => setToggle(!toggle)}
         >
@@ -18,6 +19,7 @@ export function Header({ setToggle, toggle } : IProps) {
         </button>
       </div>
       <div>Quem ta logado</div>
+      </div>
     </S.Container>
   )
 }
