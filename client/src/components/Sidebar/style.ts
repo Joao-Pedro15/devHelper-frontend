@@ -16,6 +16,8 @@ export const Container = styled.aside<IToggle>`
   width: ${({ isToggle }) => isToggle ? '300px' : '60px'};
   overflow: hidden;
   transition: .3s ease-in all;
+  box-shadow: 3px 0 20px #333;
+  z-index: 10;
   ul{
     width:100%;
     display: flex;
