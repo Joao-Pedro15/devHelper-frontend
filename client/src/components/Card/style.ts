@@ -15,6 +15,11 @@ export const Container = styled.div`
       opacity: 50%;
     }
   }
+
+  @media(max-width: 950px){
+    width: 20rem;
+    height: 10rem;
+  }
 `
 
 export const Header = styled.header`
