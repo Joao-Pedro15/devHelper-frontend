@@ -12,7 +12,7 @@ export const MulterConfig = {
         filename: (request, file, callback) => {
             randomBytes(16, (err:Error | null, hash:Buffer) => {
                 if(err) return err
-                const fileName = `${hash.toString('hex')}-${file.originalname}`
+                const fileName = `${file.originalname}`
                 callback(null, fileName)
             })
         },
