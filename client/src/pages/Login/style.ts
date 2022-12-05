@@ -2,64 +2,74 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   position: absolute;
-  margin: auto;
-  border: 1px solid #333;
-  border-radius: 10px;
-  width: 40%;
-  height: 50%;
-  left: 30%;
-  top: 20%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+`
+export const Banner = styled.div`
+  background-color: blueviolet;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   justify-content: center;
-  box-shadow: 0px 2px 10px #eee;
-
-  h1{
-    color: darkred;
-    span { color: black }
-    border-bottom: 2px solid #ccc;
+  gap: 20px;
+  color: #FFE;
+  svg, img {
+    height: 8rem;
+    width: 8rem;
   }
+  p{
+    font-size: 1rem;
+  }
+`
+
+export const Form = styled.div`
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 10px solid #fff;
 
   form {
-    width: 90%;
-    padding: 10px;
+    .logo {
+      display: flex;
+      align-self: flex-start;
+      flex-direction: row !important;
+      align-items: center;
+      color: blueviolet;
+      img, svg { width: 2rem; height: 2rem }
+    }
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
+    small {
+      align-self: flex-end;
+      color: #777;
+    }
   }
 
-  section {
+  div:last-of-type {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    position: relative;
-    width: 100%;
-    label {
-      font-weight: 700;
-      font-size:.8rem;
-      padding: 2px 5px;
-    }
-
+    align-items: center;
+    gap: 15px;
     input {
-      padding: 8px 10px;
-      outline: none;
-      border: 1px solid #333;
-      box-shadow: 0px 3px 10px #ccc;
-      border-radius: 2px;
-      color: #333;
+      background-color: blueviolet;
+      color: #FFE;
+    }
+    a{
+      color: blueviolet;
+      text-decoration: solid;
     }
   }
-  button{
-    padding: 10px 20px;
+
+  input, button{ 
+    padding: 20px 10px;
+    border-radius: 10px;
     outline: none;
-    font-weight: bold;
-    border-radius: 5px;
     border: none;
-    background-color: darkred;
-    color: #eee;
-  }
+    box-shadow: 0px 0px 8px #ccc;
+    min-width: 100%;
+}
 `
