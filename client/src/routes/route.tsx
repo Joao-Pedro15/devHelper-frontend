@@ -16,7 +16,7 @@ const Route: React.FC<RouteProps> = ({
 }: RouteProps) => {
   // const { userLogged } = useContext(AuthContext)  
   // console.log(userLogged, 'eoijfeoifje', isPrivate);
-  const userLogged = true
+  const userLogged = false
   
 
   if (isPrivate && !userLogged) return <Redirect to="/login" />;

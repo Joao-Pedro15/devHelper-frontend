@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
   }
 
@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 
   a {

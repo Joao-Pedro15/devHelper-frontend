@@ -1,8 +1,8 @@
-import React, { ChangeEvent, FormEvent, useState, useContext } from 'react'
+import { ChangeEvent, FormEvent, useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import * as S from './style'
-
+import { FaConnectdevelop } from 'react-icons/fa'
 interface ILogin {
   email: string,
   password: string
@@ -31,18 +31,27 @@ export function Login() {
 
   return (
     <S.Container>
-      <h1>Dev<span>Helper</span></h1>
-      <form onSubmit={(e:FormEvent) => LoginFn(e)}>
-        <section>
-          <label htmlFor="email">Email</label>
-          <input name="email" type="email" placeholder="Ex: example@gmail.com" onChange={handleInput} />
-        </section>
-        <section>
-          <label htmlFor="password">Senha</label>
-          <input name="password" type="password" placeholder="Digite sua senha" onChange={handleInput} />
-        </section>
-        <button type="submit">Login</button>
+     <S.Banner>
+      <FaConnectdevelop />
+      <h1>DevHelper</h1>
+      <p>Desenvolvendo soluções para seus pequenos problemas</p>
+     </S.Banner>
+     <S.Form>
+      <form id='login'>
+      <div className="logo">
+        <FaConnectdevelop />
+        <h2>DevHelper</h2>
+      </div>
+        <input type="text" placeholder='Seu email ou usuário' />
+        <input type="text" placeholder='Sua senha' />
+        <small><a href="#">Esqueci minha senha</a></small>
       </form>
+      <div>
+        <input type="submit" value={'Login'} />
+        <span>Não tem uma conta? <a href="#">Criar</a></span>
+        <small>Termos de uso</small>
+      </div>
+     </S.Form>
     </S.Container>
   )
 }  

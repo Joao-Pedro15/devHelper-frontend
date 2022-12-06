@@ -22,6 +22,6 @@ app.get('*', (request: Request, response: Response) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server running on port', 3000);
+app.listen(3344, () => {
+    console.log('Server running on port', 3344);
 })
