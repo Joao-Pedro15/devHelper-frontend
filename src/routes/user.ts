@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express'
 import { authMiddleware } from '../middlewares/auth'
+import { sign } from 'jsonwebtoken'
 
 const router = Router()
 
@@ -12,8 +13,8 @@ router.post('/user', async (request: Request, response: Response) => {
   const { username, password } : ILogin = request.body
   try {
     if(!username.trim() || !password.trim()) throw new Error('username and password not empty!')
-
-
+    const token = sign({ user: username }, 'secret_TOKE')
+    return response.status(200).send(token)
   } catch (error:any) {
     return response.status(error.statusCode).json({message: error.message})
   }
