@@ -9,11 +9,8 @@ export function Resize() {
   const onSubmit = async(e:FormEvent) => {
     e.preventDefault()
     const data = new FormData()
-    data.append('file', image)
-    
+    data.append('file', image)    
     await API.post('/images/resize?width=300', data)
-    
-    console.log('opa opa opa em ');
     
   }
   return (
