@@ -22,15 +22,25 @@ export const AuthContext = createContext<ContextType | any>(null);
 export const AuthProvider: FC<IProviderBimester> = ({
   children,
 }: IProviderBimester) => {
-  const [userLogged, setUserLogged] = useState(null);
+  const [userLogged, setUserLogged] = useState<any | null>(null);
+
 
   useEffect(() => {
-    const storage = localStorage.getItem('_user')    
-    if(storage &&  !userLogged) {
-      console.log(JSON.parse(storage), 'olha tem ');
+    const validateToken = async () => {
+      const storage = JSON.stringify(localStorage.getItem('token'))
       
-      setUserLogged(JSON.parse(storage))
+      if(storage) {        
+        setUserLogged(storage)
+        // const { data } = await API.get('/users/allUsers', { headers: { authorization: `Bearer ${storage}` } })
+        // console.log('olhao data');
+        
+        // console.log(data, 'olha o data');
+        
+        // if(data) setUserLogged(data)
+      }
     }
+    validateToken()
+    console.log(userLogged, 'olha o que ta logado');
   }, [])
 
   return (
