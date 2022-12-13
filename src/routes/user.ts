@@ -5,28 +5,32 @@ import { sign } from 'jsonwebtoken'
 const router = Router()
 
 type ILogin =  {
-  username: string
+  email: string
   password: string
 }
 
+const users = [
+  {username: 'alonedw', password: 'nonpassword'},
+  {username: 'rockabillyboy', password: 'loremIpsum'}
+]
+
 router.post('/user', async (request: Request, response: Response) => {
-  const { username, password } : ILogin = request.body
+  const { email, password } : ILogin = request.body
   try {
-    if(!username.trim() || !password.trim()) throw new Error('username and password not empty!')
-    const token = sign({ user: username }, 'secret_TOKE')
-    return response.status(200).send(token)
+    // if(!username.trim() || !password.trim()) throw new Error('username and password not empty!')
+    const token = sign({ user: email }, 'secretToken', { expiresIn: "1h" })
+    return response.status(200).json({ user: users[0], token })
   } catch (error:any) {
+    console.log(error);
+    
     return response.status(error.statusCode).json({message: error.message})
   }
 })
 
+
 router.get('/allUsers', authMiddleware, async (request: Request, response: Response) => {
-  const users = [
-    {username: 'alonedw', password: 'nonpassword'},
-    {username: 'rockabillyboy', password: 'loremIpsum'}
-  ]
   try {
-    return response.status(200).json(users)
+    return response.status(200).json(users[0])
   } catch (error:any) {
     return response.status(error.statusCode).json({message: error.message})
   }

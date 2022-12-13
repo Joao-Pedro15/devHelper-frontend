@@ -71,5 +71,11 @@ export const Form = styled.div`
     border: none;
     box-shadow: 0px 0px 8px #ccc;
     min-width: 100%;
-}
+  }
+
+  input[type="submit"] {
+    :hover {
+      background-color: red;
+    }
+  }
 `
