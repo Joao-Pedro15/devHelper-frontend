@@ -4,7 +4,7 @@ import {
   RouteProps as ReactRouterProps,
   Redirect,
 } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../auth/AuthContext";
 
 interface RouteProps extends ReactRouterProps {
   isPrivate?: boolean;
@@ -14,14 +14,11 @@ const Route: React.FC<RouteProps> = ({
   isPrivate = false,
   ...rest
 }: RouteProps) => {
-  // const { userLogged } = useContext(AuthContext)  
-  // console.log(userLogged, 'eoijfeoifje', isPrivate);
-  const userLogged = false
-  
+  const { user } = useContext(AuthContext)  
 
-  if (isPrivate && !userLogged) return <Redirect to="/login" />;
+  if (isPrivate && !user) return <Redirect to="/login" />;
 
-  if (!isPrivate && userLogged) return <Redirect to="/home" />;
+  // if (isPrivate && user) return <Redirect to="/home" />;
 
   return <RouteReact {...rest} />;
 };
