@@ -5,7 +5,7 @@ import { sign } from 'jsonwebtoken'
 const router = Router()
 
 type ILogin =  {
-  username: string
+  email: string
   password: string
 }
 
@@ -15,10 +15,10 @@ const users = [
 ]
 
 router.post('/user', async (request: Request, response: Response) => {
-  const { username, password } : ILogin = request.body
+  const { email, password } : ILogin = request.body
   try {
     // if(!username.trim() || !password.trim()) throw new Error('username and password not empty!')
-    const token = sign({ user: username }, 'secretToken', { expiresIn: "1h" })
+    const token = sign({ user: email }, 'secretToken', { expiresIn: "1h" })
     return response.status(200).json({ user: users[0], token })
   } catch (error:any) {
     console.log(error);
