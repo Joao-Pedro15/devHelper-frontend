@@ -74,8 +74,14 @@ export const Form = styled.div`
   }
 
   input[type="submit"] {
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    font-size: 1rem;
+    font-weight: 700;
+    transform: scale(.95);
     :hover {
-      background-color: red;
+      background-color: darkviolet;
+      opacity: 2;
     }
   }
 `
