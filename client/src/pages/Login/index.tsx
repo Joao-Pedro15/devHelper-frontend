@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from '../../auth/AuthContext'
 import * as S from './style'
 import { FaConnectdevelop } from 'react-icons/fa'
 interface ILogin {
@@ -10,7 +10,7 @@ interface ILogin {
 
 export function Login() {
   const history = useHistory()
-  const { userLogged, setUserLogged } = useContext(AuthContext)
+  const { signin } = useContext(AuthContext)
   const [form, setForm] = useState<null | ILogin>(null)
 
   const handleInput = (e:ChangeEvent<HTMLInputElement>) => {
@@ -21,11 +21,11 @@ export function Login() {
     }))
   } 
 
-  const LoginFn = (e:FormEvent) => {
+  const LoginFn = async (e:FormEvent) => {
     e.preventDefault()
-    localStorage.setItem('_user', JSON.stringify(form))
-    setUserLogged(form)
-    window.location.href = './home'
+    const isLogged = await signin(form!.email, form!.password)
+    if(isLogged) return window.location.href = '/home'
+    return alert('Deu ruim!')
 
   }
 
@@ -37,17 +37,17 @@ export function Login() {
       <p>Desenvolvendo soluções para seus pequenos problemas</p>
      </S.Banner>
      <S.Form>
-      <form id='login'>
+      <form id='login' onSubmit={LoginFn}>
       <div className="logo">
         <FaConnectdevelop />
         <h2>DevHelper</h2>
       </div>
-        <input type="text" placeholder='Seu email ou usuário' />
-        <input type="text" placeholder='Sua senha' />
+        <input type="text" name='email' placeholder='Seu email ou usuário' onChange={handleInput} />
+        <input type="password" name='password' placeholder='Sua senha' />
         <small><a href="#">Esqueci minha senha</a></small>
       </form>
       <div>
-        <input type="submit" value={'Login'} />
+        <input type="submit" value={'Login'} form='login' />
         <span>Não tem uma conta? <a href="#">Criar</a></span>
         <small>Termos de uso</small>
       </div>
