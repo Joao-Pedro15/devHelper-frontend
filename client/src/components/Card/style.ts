@@ -1,24 +1,33 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  width: 25rem;
-  height: 13rem;
+type IProps = {
+  active?: boolean
+}
+
+export const Container = styled.div<IProps>`
+  width: 20rem;
+  height: 10rem;
   margin-bottom: 10px;
   border-radius: 12px;
   overflow: hidden;
-  background-color:#eeee;
-  box-shadow: 1px 2px 10px #ccc;
-  transition: .5s ease-in-out;
-  :hover{
-    header{
-      transform: scale(40);
-      opacity: 50%;
-    }
-  }
-
+  box-shadow: 2px 2px 4px 2px #eee;
+  padding: 5px 10px;
+  position: relative;
+  cursor: pointer;
   @media(max-width: 950px){
     width: 20rem;
     height: 10rem;
+  }
+  small {
+    background-color: ${({active}) => active ? 'blueviolet' : 'orange'};
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: .7rem;
+    right: 5%;
+    bottom: 5%;
+    position: absolute;
+    font-weight: bold;
+    color: white;
   }
 `
 

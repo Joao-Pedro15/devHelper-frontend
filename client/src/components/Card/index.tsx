@@ -7,14 +7,12 @@ type IProps = {
   title: string;
   actions: string[] | string
   color?: string
+  active?: boolean
 }
 
-function Card({ actions, image, title, color } : IProps) {
+function Card({ actions, image, title, color, active } : IProps) {
   return (
-    <S.Container>
-      <S.Header>
-      <div></div>
-      </S.Header>
+    <S.Container active={active}>
       <S.Main>
       <div>
         <VscFilePdf />
@@ -33,6 +31,7 @@ function Card({ actions, image, title, color } : IProps) {
           </>
         ) }
       </S.Main>
+      <small>{ active ? 'Ativo' : 'Em breve'  }</small>
     </S.Container>
   )
 }
