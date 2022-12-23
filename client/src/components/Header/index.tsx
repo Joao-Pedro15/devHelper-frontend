@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import * as S from './style'
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { HiMenu } from "react-icons/hi"
 
 type IProps = {
   toggle: boolean,
@@ -15,7 +16,7 @@ export function Header({ setToggle, toggle } : IProps) {
         <button
         onClick={() => setToggle(!toggle)}
         >
-          {!toggle ? <AiOutlineMenu/> : <AiOutlineClose />}
+          {!toggle ? <HiMenu/> : <HiMenu />}
         </button>
       </div>
       <div>Quem ta logado</div>

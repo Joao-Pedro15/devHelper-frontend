@@ -2,17 +2,21 @@ import styled from 'styled-components'
 
 export const Container = styled.header`
   position: fixed;
-  width: 100%;
-  background-color: var(--primary);  
+  width: 97%;
+  background-color: blueviolet;  
   z-index: 100;
   color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px 10px;
   svg {
     color: #fff;
     border-color: #fff;
+    font-size: 20rem;
   }
   div:first-of-type {
     color: #fff;
-    padding: .2rem 1rem;
+    padding: .1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,8 +24,8 @@ export const Container = styled.header`
 
   button {
     background-color: transparent;
-    svg { font-size: 1.5rem };
-    margin-left: -15px;
+    svg { font-size: 2rem; font-weight: bold };
+    margin-left: 4px;
     border: none;
   }
 `

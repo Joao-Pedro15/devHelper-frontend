@@ -4,6 +4,7 @@ import {TbResize } from "react-icons/tb";
 import { SiMicrosoftexcel } from "react-icons/si";
 import { VscJson, VscFilePdf } from "react-icons/vsc";
 import { AiOutlineFileJpg, AiFillFileWord } from "react-icons/ai";
+import { BsImage } from "react-icons/bs"
 import { Link } from 'react-router-dom';
 
 type Items = {
@@ -18,7 +19,7 @@ type ISidebar = {
 
 export function Sidebar({ isToggle }:ISidebar) {
     const items : Items[] = [
-      { name: 'Redimencionar', icon: <TbResize/>, link: '/' },
+      { name: 'Imagem', icon: <BsImage/>, link: '/' },
       { name: 'Excel', icon: <SiMicrosoftexcel/>, link: '/' },
       { name: 'Json', icon: <VscJson/>, link: '/' },
       { name: 'PDF', icon: <VscFilePdf/>, link: '/' },

@@ -8,9 +8,8 @@ export function Home() {
   return (
     <Layout>
       <S.Container>
-        <h1>Todos os serviços</h1>
         <CardContainer>
-          <Card title='PDF' key={1} actions={action}  />
+          <Card title='PDF' key={1} actions={action} active={true} />
           <Card title='PDF' key={1} actions={action}  />
           <Card title='PDF' key={1} actions={action}  />
           <Card title='PDF' key={1} actions={action}  />
