@@ -1,1 +1,1 @@
-prisma/migrations merge=ours
+prisma merge=ours
