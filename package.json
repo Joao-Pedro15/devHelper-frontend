@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "ts-node-dev --files --exit-child --transpile-only --ignore-watch node_modules --respawn src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand"
   },
   "repository": {
     "type": "git",
